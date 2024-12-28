@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="logo.png" />
+    <title>Family Document Storage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-page" class="container">
+        <div class="login-card">
+            <h1>Family Document Storage</h1>
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Enter Username" class="input-field">
+            <input type="password" id="password" placeholder="Enter Password" class="input-field">
+            <button class="btn btn-primary" onclick="login()">Login</button>
+            <p id="login-error" class="error"></p>
+        </div>
+    </div>
+
+    <!-- Member Selection Page -->
+    <div id="member-selection-page" class="container" style="display: none;">
+        <h1>Select a Family Member</h1>
+        <div class="grid-container">
+            <div class="grid-item" onclick="showMemberDocuments('member1')">SAI VENKAT</div>
+            <div class="grid-item" onclick="showMemberDocuments('member2')">HEMADRI</div>
+            <div class="grid-item" onclick="showMemberDocuments('member3')">PUSHPALATHA</div>
+            <div class="grid-item" onclick="showMemberDocuments('member4')">MUKUNDA</div>
+            <div class="grid-item" onclick="showMemberDocuments('member5')">Member 5</div>
+        </div>
+    </div>
+
+    <!-- Documents Page -->
+    <div id="documents-page" class="container" style="display: none;">
+        <h1 id="member-title"></h1>
+        <input type="text" id="search-bar" placeholder="Search Documents" class="input-field" oninput="filterDocuments()">
+        <table class="document-table">
+            <thead>
+                <tr>
+                    <th>Document Name</th>
+                    <th>Preview</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="document-list">
+                <!-- Documents will be dynamically loaded here -->
+            </tbody>
+        </table>
+        <button class="btn btn-secondary" onclick="goBackToMembers()">Back to Members</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
